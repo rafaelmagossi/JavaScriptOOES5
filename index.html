@@ -10,20 +10,44 @@
     <p> OOP JacaScript</p>
     <script>
         function Person() {
-            this.name;
-            this.age;
-            this.height;
+            var name; //como var nao pode ser acessada pela instancia
+            var age;
+            var height;
 
             this.sayHello = function (name) {
                 console.log('Hello ' + name);
             }
+
+            this.getName = function getName(){
+                return name;
+            }
+
+            this.setName = function setName(_name){
+                name = _name;
+            }
+
+            this.getAge = function getAge(){
+                return age ;
+            }
+
+            this.setAge = function getAge(_age){
+                age = _age;
+            }
+
+            this.getHeight = function getHeight(){
+                return height ;
+            }
+
+            this.setHeight = function setHeight(_height){
+                height = _height;
+            }
         }
 
         var rafael = new Person();
-        rafael.name = "Rafael"
-        rafael.age = 23;
-        rafael.height = 1.67;
-        rafael.sayHello(rafael.name);
+        rafael.setName('Rafael')
+        rafael.setAge(23);
+        rafael.setHeight(1.67);
+        rafael.sayHello(rafael.getName());
 
         console.log(rafael);
 
