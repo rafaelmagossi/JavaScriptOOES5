@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p> OOP JacaScript</p>
+    <script>
+        function Person() {
+            this.name;
+            this.age;
+            this.height;
+
+            this.sayHello = function (name) {
+                console.log('Hello ' + name);
+            }
+        }
+
+        var rafael = new Person();
+        rafael.name = "Rafael"
+        rafael.age = 23;
+        rafael.height = 1.67;
+        rafael.sayHello(rafael.name);
+
+        console.log(rafael);
+
+    </script>
+</body>
+</html>
