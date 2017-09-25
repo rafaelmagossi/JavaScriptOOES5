@@ -43,6 +43,15 @@
             }
         }
 
+        Person.static_method = function () { //metodo estatico
+            console.log('This is my First static method');
+        }
+
+        Person.static_method();
+        Person.status_attr = 'My_first_attr_Static'
+
+        console.log(Person.status_attr);
+
         var rafael = new Person();
         rafael.setName('Rafael')
         rafael.setAge(23);
