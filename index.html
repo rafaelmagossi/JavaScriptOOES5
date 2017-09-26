@@ -47,23 +47,30 @@
             }
         }
 
-        Person.static_method = function () { //metodo estatico
-            console.log('This is my First static method');
+        Person.myStaticFunc = function () { //metodo estatico
+            console.log('First static method');
         }
 
-        Person.static_method();
+        //Person.static_method();
         Person.status_attr = 'My_first_attr_Static'
+        Person.prototype.myPrototypeFunc = function () {
+            console.log('First Prototype function');
+        }
 
-        console.log(Person.status_attr);
+        //console.log(Person.status_attr);
 
         var rafael = new Person('Rafael', 23, 1.67);
-        rafael.initialize();
+        console.log(rafael);
+        console.log(rafael.__proto__);
+        console.log(Person.prototype);
+        rafael.myPrototypeFunc(); //prototype acessa metodos pelo obj da instancia ou pela classe direto
+        Person.prototype.myPrototypeFunc();
+        //rafael.initialize();
         // rafael.setName('Rafael')
         // rafael.setAge(23);
         // rafael.setHeight(1.67);
-        rafael.sayHello(rafael.getName());
+        //rafael.sayHello(rafael.getName());
 
-        console.log(rafael);
 
     </script>
 </body>
