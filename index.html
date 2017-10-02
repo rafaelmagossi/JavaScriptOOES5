@@ -76,12 +76,22 @@
 
         Employee.prototype = Object.create(Person.prototype) // transfere os metdos, atributos (herança)
 
+        var victor = new Person('Victor', 22, 1.70)
+        console.log(victor.getName(), victor.getAge())
+        victor.happyBirthday()
+        console.log(victor.getName(), victor.getAge())
+        
+
         //var rafael = new Person('Rafael', 23, 1.67);
 
         var rafael = new Employee('Rafael', 28 , 1.67)
-        console.log(rafael.getAge());
+
+        console.log(rafael.getName() , rafael.getAge());
+        rafael.happyBirthday = function habbyBirthday(){ // polimorfismo
+            return this.setAge(this.getAge() +2 )
+        }
         rafael.happyBirthday()
-        console.log(rafael.getAge());
+        console.log(victor.getName(), rafael.getAge());
 
         //Person.static_method();
         // console.log(rafael);
