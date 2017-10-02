@@ -51,20 +51,45 @@
             console.log('First static method');
         }
 
-        //Person.static_method();
         Person.status_attr = 'My_first_attr_Static'
-        Person.prototype.myPrototypeFunc = function () {
-            console.log('First Prototype function');
+
+        Person.prototype.happyBirthday = function(){
+            return this.setAge(this.getAge() + 1) 
         }
 
-        //console.log(Person.status_attr);
+        // Person.prototype.myPrototypeFunc = function () {
+        //     console.log('First Prototype function');
+        // }
+        
+        function Employee(_name, _age, _height) {
 
-        var rafael = new Person('Rafael', 23, 1.67);
-        console.log(rafael);
-        console.log(rafael.__proto__);
-        console.log(Person.prototype);
-        rafael.myPrototypeFunc(); //prototype acessa metodos pelo obj da instancia ou pela classe direto
-        Person.prototype.myPrototypeFunc();
+            var salary
+            Person.call(this, _name, _age, _height)
+
+            this.getSalary = function(){
+                return salary
+            }
+            this.setSalary = function(_salary){
+                salary = _salary
+            }
+        }
+
+        Employee.prototype = Object.create(Person.prototype) // transfere os metdos, atributos (herança)
+
+        //var rafael = new Person('Rafael', 23, 1.67);
+
+        var rafael = new Employee('Rafael', 28 , 1.67)
+        console.log(rafael.getAge());
+        rafael.happyBirthday()
+        console.log(rafael.getAge());
+
+        //Person.static_method();
+        // console.log(rafael);
+        //console.log(Person.status_attr);
+        // console.log(rafael.__proto__);
+        // console.log(Person.prototype);
+        // rafael.myPrototypeFunc(); //prototype acessa metodos pelo obj da instancia ou pela classe direto
+        // Person.prototype.myPrototypeFunc();
         //rafael.initialize();
         // rafael.setName('Rafael')
         // rafael.setAge(23);
